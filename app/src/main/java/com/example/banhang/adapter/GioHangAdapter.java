@@ -19,6 +19,8 @@ import com.squareup.picasso.Picasso;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
+import static com.example.banhang.activity.GioHangActivity.EventUtil;
+
 public class GioHangAdapter extends BaseAdapter {
     Context context;
     ArrayList<GioHang> manggiohang;
@@ -94,10 +96,10 @@ public class GioHangAdapter extends BaseAdapter {
                 long giahientai= MainActivity.mangGioHang.get(position).getGiasp();
                 MainActivity.mangGioHang.get(position).setSoluong(slmoinhat);
                 long giamoinhat= (giahientai*slmoinhat)/slhientai;
-                MainActivity.mangGioHang.get(position).getGiasp();
+                MainActivity.mangGioHang.get(position).setGiasp(giamoinhat);
                 DecimalFormat decimalFormat= new DecimalFormat("###,###,###");
                 finalViewHolder.txtgiagiohang.setText("Giá: "+decimalFormat.format(giamoinhat)+" Đ");
-                GioHangActivity.EventUtil();
+                EventUtil();
 
                 if(slmoinhat>9){
                     finalViewHolder.btnplus.setVisibility(View.INVISIBLE);
@@ -118,10 +120,10 @@ public class GioHangAdapter extends BaseAdapter {
                 long giahientai= MainActivity.mangGioHang.get(position).getGiasp();
                 MainActivity.mangGioHang.get(position).setSoluong(slmoinhat);
                 long giamoinhat= (giahientai*slmoinhat)/slhientai;
-                MainActivity.mangGioHang.get(position).getGiasp();
+                MainActivity.mangGioHang.get(position).setGiasp(giamoinhat);
                 DecimalFormat decimalFormat= new DecimalFormat("###,###,###");
                 finalViewHolder.txtgiagiohang.setText("Giá: "+decimalFormat.format(giamoinhat)+" Đ");
-                GioHangActivity.EventUtil();
+                EventUtil();
 
                 if(slmoinhat<2){
                     finalViewHolder.btnplus.setVisibility(View.VISIBLE);

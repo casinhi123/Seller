@@ -50,7 +50,6 @@ public class GioHangActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
                         if(MainActivity.mangGioHang.size()<=0){
                             tvthongbao.setVisibility(View.VISIBLE);
-
                         }
                         else{
                             MainActivity.mangGioHang.remove(which);
