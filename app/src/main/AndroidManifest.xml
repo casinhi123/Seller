@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SellerApplication">
-        <activity android:name=".activity.ThongTinActivity"></activity>
+        <activity android:name=".activity.ThongTinKhachHang"/>
+        <activity android:name=".activity.ThongTinActivity"/>
         <activity android:name=".activity.LienActivity" />
         <activity android:name=".activity.DienThoaiActivity" />
         <activity android:name=".activity.LaptopActivity" />

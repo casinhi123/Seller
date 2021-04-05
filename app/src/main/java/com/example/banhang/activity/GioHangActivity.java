@@ -1,6 +1,7 @@
 package com.example.banhang.activity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,6 +17,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.example.banhang.R;
 import com.example.banhang.adapter.GioHangAdapter;
 import com.example.banhang.model.GioHang;
+import com.example.banhang.ultil.CheckConnection;
 
 import java.text.DecimalFormat;
 
@@ -35,6 +37,30 @@ public class GioHangActivity extends AppCompatActivity {
         CheckData();
         EventUtil();
         CatchOnItemLongClick();
+        EventButton();
+    }
+
+    private void EventButton() {
+        btntieptucmua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnthanhtoan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(MainActivity.mangGioHang.size()>0){
+                    Intent intent = new Intent(getApplicationContext(), ThongTinKhachHang.class);
+                    startActivity(intent);
+                }
+                else{
+                    CheckConnection.ShowToast_Short(getApplicationContext(),"Giỏ hàng của bạn chưa có sản phẩm để thanh toan");
+                }
+            }
+        });
     }
 
     private void CatchOnItemLongClick() {
